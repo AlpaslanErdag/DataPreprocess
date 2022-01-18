@@ -58,7 +58,7 @@ data = readtable('dataarranged.xls')
  data.Humidity = stand_hum;
  
 % After preprocess i record new dataset as "preprocessed"
-writetable(data,'C:\Users\Paul\Downloads\ML Lab1\preprocessed_data.xls'); 
+writetable(data,'C:\Users\alp\preprocessed_data.xls'); 
 
 %% -------------- Building Classifier ----------------------------
 % ---------------------------- Code ---------------------------
@@ -68,7 +68,7 @@ regression_model = fitrsvm(data, 'Occupancy~ Humidity+CO2', 'KernelFunction','li
 
 %% -------------- Test and Train sets ----------------------------
 % ----------------------------Build-in function Code ---------------------------
-% !!!!!!!!!!!! THIS WILL NOT BE IN FINAL REPORT, I used this just for to get resulst earlier !!!!!!!!!!!!
+% 
 cv = cvpartition(classification_model.NumObservations, 'HoldOut', 0.2);
 cross_validated_model = crossval(classification_model,'cvpartition',cv); 
 
